@@ -40,3 +40,11 @@ def product(values):
     for i in values:
         res *= i
     return res
+
+
+def divisors(n):
+    c = 1
+    while c <= n:
+        if n % c == 0:
+            yield c
+        c += 1
