@@ -1,14 +1,14 @@
 from utils import factors, product
 
-facs = {}
+facMap = {}
 for i in range(2, 21):
-    l = list(factors(i))
-    k = {j: l.count(j) for j in set(l)}
-    for j in set(list(k.keys()) + l):
-        if j in facs:
-            if j in k:
-                facs[j] = max(k[j], facs[j])
+    facList = list(factors(i))
+    facMapNew = {j: facList.count(j) for j in set(facList)}
+    for j in set(list(facMapNew.keys()) + facList):
+        if j in facMap:
+            if j in facMapNew:
+                facMap[j] = max(facMapNew[j], facMap[j])
         else:
-            facs[j] = k[j]
+            facMap[j] = facMapNew[j]
 
-print(product([i[0] ** i[1] for i in facs.items()]))
+print(product([i[0] ** i[1] for i in facMap.items()]))

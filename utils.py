@@ -15,6 +15,7 @@ def primes():
         yield a
         a = next_prime(a)
 
+
 def fib_seq():
     a = 1
     b = 1
@@ -24,6 +25,7 @@ def fib_seq():
         a = b
         b += t
 
+
 def factors(n):
     c = 2
     while n > 1:
@@ -32,8 +34,9 @@ def factors(n):
             n /= c
         c += 1
 
-def product(list):
+
+def product(values):
     res = 1
-    for i in list:
+    for i in values:
         res *= i
     return res

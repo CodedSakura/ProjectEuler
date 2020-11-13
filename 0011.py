@@ -39,12 +39,7 @@ for y in range(16):
         p = product([data[y][x], data[y+1][x+1], data[y+2][x+2], data[y+3][x+3]])
         if maxp < p:
             maxp = p
-for y in range(16):
-    for x in range(16):
-        p = product([data[y][x], data[y+1][x+1], data[y+2][x+2], data[y+3][x+3]])
-        if maxp < p:
-            maxp = p
-for y in range(4,20):
+for y in range(4, 20):
     for x in range(16):
         p = product([data[y][x], data[y-1][x+1], data[y-2][x+2], data[y-3][x+3]])
         if maxp < p:
