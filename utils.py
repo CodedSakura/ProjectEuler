@@ -43,8 +43,21 @@ def product(values):
 
 
 def divisors(n):
+    for i in range(1, int(n ** .5 + 1)):
+        if n % i == 0:
+            if n // i == i:
+                yield i
+            else:
+                yield i
+                yield n // i
+
+
+def factorial(n):
     c = 1
-    while c <= n:
-        if n % c == 0:
-            yield c
-        c += 1
+    for i in range(1, n+1):
+        c *= i
+    return c
+
+
+def pascals_triangle(row, col):
+    return factorial(row) // (factorial(col) * factorial(row - col))

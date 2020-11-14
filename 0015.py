@@ -1,14 +1,3 @@
-# 2 2 1
-# 2 2 1
-# 1 1 0
+from utils import pascals_triangle
 
-# 6 3 1
-# 3 4 2
-# 1 2 0
-
-# 2 2 2 1
-# 2 2 2 1
-# 2 2 2 1
-# 1 1 1 0
-
-# WIP
+print(pascals_triangle(20 * 2, 20))
