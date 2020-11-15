@@ -61,3 +61,31 @@ def factorial(n):
 
 def pascals_triangle(row, col):
     return factorial(row) // (factorial(col) * factorial(row - col))
+
+
+def permutations(values):
+    # for i in range(len(values)):
+    #     v = values[i]
+    #     subs = values[:i] + values[i+1:]
+    #     print(i, v, subs, values)
+    #     for j in permutations(subs):
+    #         yield [v] + j
+    r = list(range(len(values)-1))
+    while True:
+        yield list(values)
+        k = -1
+        for i in r:
+            if values[i] < values[i+1]:
+                k = i
+
+        if k == -1:
+            break
+
+        l = -1
+        for i in range(k, len(values)):
+            if values[i] > values[k] and i > l:
+                l = i
+
+        (values[k], values[l]) = (values[l], values[k])
+        values = values[:k+1] + values[:k:-1]
+
