@@ -64,12 +64,6 @@ def pascals_triangle(row, col):
 
 
 def permutations(values):
-    # for i in range(len(values)):
-    #     v = values[i]
-    #     subs = values[:i] + values[i+1:]
-    #     print(i, v, subs, values)
-    #     for j in permutations(subs):
-    #         yield [v] + j
     r = list(range(len(values)-1))
     while True:
         yield list(values)
