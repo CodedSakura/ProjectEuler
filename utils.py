@@ -45,12 +45,22 @@ def long_division(divisor, dividend=1, trim_leading=False):
 
 # <editor-fold desc="Checks">
 def is_prime(n):
-    if n < 0:
+    if n < 2:
         return False
     for i in range(2, int(n ** .5 + 1)):
         if n % i == 0:
             return False
     return True
+
+
+def is_palindrome(text):
+    if text == "":
+        return None
+    if len(text) == 1:
+        return True
+    if len(text) % 2 == 1:
+        return text[:len(text)//2+1] == text[len(text)//2:][::-1]
+    return text[:len(text)//2] == text[len(text)//2:][::-1]
 # </editor-fold>
 
 
@@ -71,6 +81,11 @@ def factorial(n):
 
 def digits(num):
     return list(map(int, str(num)))
+
+
+def rotate_left(l):
+    for i in range(len(l)):
+        yield l[i:] + l[:i]
 # </editor-fold>
 
 
